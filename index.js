@@ -10,7 +10,7 @@ import jobRouter from './src/routes/job.route.js'
 import serviceRouter from './src/routes/service.route.js'
 import AdminRouter from './src/routes/admin.route.js'
 import emailRouter from './src/routes/mail.route.js'
-
+import cors from 'cors'
 
 const app = express();
 
@@ -31,6 +31,7 @@ app.use(
         credentials: true,
     })
 );
+// app.use(cors())
 
 app.use(morgan('dev'));
 app.use(express.json());

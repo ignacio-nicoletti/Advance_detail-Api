@@ -34,10 +34,10 @@ export const login = async (req, res) => {
         if (!user) {
             return res.status(403).json({ error: "No existe este usuario" });
         }
-        //compara que las contraseñas coincidan  
-        // const respuestaPassword = await user.comparePassword(password);
-        // if (!respuestaPassword)
-        //     return res.status(403).json({ error: "Contraseña incorrecta" });
+        // compara que las contraseñas coincidan
+        const respuestaPassword = await user.comparePassword(password);
+        if (!respuestaPassword)
+            return res.status(403).json({ error: "Contraseña incorrecta" });
 
         // Generar el token JWT
         const { token, expiresIn } = generateToken(user._id);
