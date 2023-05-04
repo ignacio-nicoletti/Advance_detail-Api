@@ -38,7 +38,8 @@ const adminSchema = new mongoose.Schema({
         default: true
     },
     verify: {
-        type: Boolean
+        type: Boolean,
+        default: false
     }
 });
 

@@ -45,7 +45,7 @@ export const login = async (req, res) => {
 
 
 
-        return res.status(200).json({ token, expiresIn });
+        return res.status(200).json({ token, expiresIn,user});
 
     } catch (error) {
         res.status(400).json(formatError(error.message))
